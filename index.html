@@ -1,11 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang ="en">
   <head>
-    <link rel="stylesheet" href="style.css" />
+    <link rel ="stylesheet" href="style.css" />
     <title>Dream Garage</title>
     <script defer src="script.js" defer></script>
+    <link rel = 'stylesheet' href="style.css">
   </head>
   <body>
-    <h1></h1>
+    <div class="header">
+      <h1 id = 'title'>Dream Garage</h1>
+    </div>
+    <div class = 'form-container'>
+      <form class = 'add-car'>
+        <input
+        type = 'text'
+        name = 'name'
+        value = ''
+        placeholder = 'Enter Car Name'
+        class = 'input-text' 
+        >
+        <input
+        type = 'text'
+        name = 'image'
+        value = ''
+        placeholder = 'Enter the image URL'
+        class = 'input-text' 
+        >
+      </br>
+      <input
+      type = 'submit'
+      name = 'submit'
+      value = 'Add car'
+      class = 'submit'
+      id = 'submit button'
+      >
+          
+      </form>
+    </div>
+    <div class = 'car-container'>
+      
+    </div>
 </body>
 </html>
