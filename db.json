@@ -1,0 +1,25 @@
+{
+    "cars":
+        [
+        {"id": 1 ,
+        "name": "Nissan Skyline" ,
+        "imgUrl": "https://images.pexels.com/photos/5657442/pexels-photo-5657442.png?auto=compress&cs=tinysrgb&dpr=1&w=500" 
+        },
+    
+        {"id": 2 ,
+        "name": "Chevy Corvette" ,
+        "imgUrl": "https://c4.wallpaperflare.com/wallpaper/422/418/440/chevrolet-corvette-car-race-tracks-yellow-wallpaper-preview.jpg" 
+        },
+        
+        {"id": 3 ,
+        "name": "Dodge Challenger" ,
+        "imgUrl": "https://images2.alphacoders.com/512/512422.jpg" 
+        },
+        
+        {"id": 4 ,
+        "name": "Ford Mustang" ,
+        "imgUrl": "https://hips.hearstapps.com/hmg-prod/images/the-2015-ford-mustang-took-center-stage-at-the-official-news-photo-1638899632.jpg?resize=1200:*" 
+        }
+        ]
+    }
+    
