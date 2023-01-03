@@ -28,7 +28,7 @@ function fetchCars(){
 
     
     
-// PATCH method used to send the updated board quantity to the server
+// PATCH method used to send new car to the server
 function sendUpdateToServer(car){
     fetch(`http://localhost:3000/cars/${car.id}`,{
         method: 'PATCH',
@@ -40,7 +40,7 @@ function sendUpdateToServer(car){
     })
 }
 
-//used submit event listener 
+// form listener
 let form = document.querySelector('form')
 form.addEventListener('submit', createNewCar)
 
@@ -48,14 +48,14 @@ function createNewCar(e){
 e.preventDefault()
 let newCar = {
     'name': e.target.name.value,
-    'image': e.target.image.value
+    'imgUrl': e.target.imgUrl
 }
 submitNewCarToDb(newCar)
 
 form.reset()
 }
 
-// use post method to send new boards submitted through the form to the DB
+// use post method to send new cars submitted  to the DB
 function submitNewCarToDb(newCar){
 fetch('http://localhost:3000/cars',{
     method: 'POST',
@@ -66,5 +66,5 @@ fetch('http://localhost:3000/cars',{
     body: JSON.stringify(newCar)
 })
 .then(resp => resp.json())
-.then(car => renderCarCard(car))
+.then(car => renderCarCard($$$$))
 }

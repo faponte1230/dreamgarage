@@ -1,4 +1,28 @@
 body {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-image: url(https://wallpaperaccess.com/full/1900672.jpg)
+    background-image: url(https://wallpaperaccess.com/full/1900672.jpg);
+}
+
+.header {
+    font-size: 35px;
+    margin: 10px;
+    font-family:Impact;
+    color: gold
+}
+
+.card {
+    background: yellow;
+    margin: 4px;
+    border: 2px 
+    color: goldenrod
+}
+
+.car-container {
+    display: flex;
+    justify-content: center;
+}
+
+.car-img {
+    height: 300px;
+    width: 300px;
 }
