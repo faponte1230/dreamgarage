@@ -12,14 +12,17 @@ body {
 
 .card {
     background: yellow;
+    
     margin: 4px;
     border: 2px 
-    color: goldenrod
+    color: gold
 }
 
 .car-container {
     display: flex;
     justify-content: center;
+    text-emphasis-color: gray;
+    text-shadow: blue;
 }
 
 .car-img {
