@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', fetchCars)
 
+    //fetches car obj from API
 function fetchCars(){
     fetch('http://localhost:3000/cars')
     .then(resp => resp.json())   
@@ -12,19 +13,20 @@ function fetchCars(){
         
         let card = document.createElement('div')
         card.className = 'card'
-        
+    
         let vehicle = document.createElement('div')
-        vehicle.textContent = car.name 
-        
+        vehicle.textContent = car.name
+
         const img = document.createElement('img')
         img.src = car.imgUrl
         img.className = 'car-img'
+        
         let btn = document.createElement('button')
         btn.textContent = 'TOW AWAY'
         btn.className = 'delete'
         btn.addEventListener('click' , () =>card.remove())
 
-        card.append(vehicle, img, btn)
+        card.append(vehicle,img,btn)
         carContainer.appendChild(card)
         sendUpdateToServer(car)
     })
@@ -41,7 +43,7 @@ function sendNewCarToServer(newCar){
         body: JSON.stringify(newCar)
     })
     .then(resp => resp.json())
-    .then(car => renderCarCard(newCar))
+    .then(car => renderCarCard(car))
     }
     
 // PATCH method used to send new car to the server
@@ -58,8 +60,6 @@ function sendUpdateToServer(car){
 
 
 
-
-// form listener
 let form = document.querySelector('form')
 form.addEventListener('submit', createNewCar)
 
@@ -69,7 +69,7 @@ console.log(carName)*/
 
 let newCar = {
     'name': e.target.name.value ,
-    'imgUrl' : e.target.img
+    'imgUrl': e.target.image.value
 }
 sendNewCarToServer(newCar)
 
