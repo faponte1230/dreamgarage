@@ -19,6 +19,11 @@
       "id": 4,
       "name": "Ford Mustang",
       "imgUrl": "https://images.unsplash.com/photo-1547744152-14d985cb937f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3270&q=80"
+    },
+    {
+      "name": "clown car turbo",
+      "imgUrl": "https://media.istockphoto.com/id/504875680/photo/fun-clown.jpg?s=612x612&w=is&k=20&c=brDFYkOWS6Ew2JqtXr6jBNcjFeA-rhcDmbBF5GparVg=",
+      "id": 5
     }
   ]
 }

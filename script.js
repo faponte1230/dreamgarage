@@ -25,7 +25,7 @@ function fetchCars(){
         btn.textContent = 'TOW AWAY'
         btn.className = 'delete'
         btn.addEventListener('click' , () =>card.remove())
-
+        
         card.append(vehicle,img,btn)
         carContainer.appendChild(card)
         sendUpdateToServer(car)
@@ -46,7 +46,7 @@ function sendNewCarToServer(newCar){
     .then(car => renderCarCard(car))
     }
     
-// PATCH method used to send new car to the server
+// use patch method to send or delete new car to the server
 function sendUpdateToServer(car){
     fetch(`http://localhost:3000/cars/${car.id}`,{
         method: 'PATCH',
@@ -59,14 +59,13 @@ function sendUpdateToServer(car){
 }
 
 
-
+// form listener
 let form = document.querySelector('form')
 form.addEventListener('submit', createNewCar)
 
-function createNewCar(e){
-/*let carName = document.getElementsByClassName('input-car-name')
-console.log(carName)*/
 
+// updates server with new obj
+function createNewCar(e){
 let newCar = {
     'name': e.target.name.value ,
     'imgUrl': e.target.image.value
@@ -75,5 +74,4 @@ sendNewCarToServer(newCar)
 
 form.reset()
 }
-
 

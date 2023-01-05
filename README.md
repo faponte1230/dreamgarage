@@ -10,4 +10,9 @@ Virtual garage where you can fill it with your favorite cars
 7. Create your dream garage!
 
 # How the app works
-In the garage are a few cars that should be in everyones garage. Feel free to submit the name of the car you want to your already impressive collection! Don't forget to include an img URL to show off that sweet ride on the app. You're always welcome to remove the default garage inventory if you have different taste.. wish away!
+This app utilizes a localized db JSON API to which will draw data from/to upon initialization. 
+
+Three event listeners are added: "DOMContentLoaded, "Submit", and "Click".
+
+
+In the garage are a few cars that should be in everyones garage. Submit the name of the car you want to add to your already impressive collection, and don't forget to include an img URL. "Towing away" your car will send it away to the shop until you reload your garage .. Wish away!
