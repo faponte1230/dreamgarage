@@ -56,7 +56,8 @@ function sendUpdateToServer(car){
         },
         body:JSON.stringify(car)
     })
-}
+} 
+
 
 
 // form listener
