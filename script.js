@@ -24,7 +24,11 @@ function fetchCars(){
         let btn = document.createElement('button')
         btn.textContent = 'TOW AWAY'
         btn.className = 'delete'
-        btn.addEventListener('click' , () =>card.remove())
+        btn.addEventListener('click' , () => {
+            fetch(`http://localhost:3000/cars/${car.id}` , {
+                method: 'DELETE' ,
+        })
+            card.remove()})
         
         card.append(vehicle,img,btn)
         carContainer.appendChild(card)
