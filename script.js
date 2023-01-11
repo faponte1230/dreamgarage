@@ -32,7 +32,7 @@ function fetchCars(){
         
         card.append(vehicle,img,btn)
         carContainer.appendChild(card)
-        sendUpdateToServer(car)
+        
     })
     }
 
@@ -50,19 +50,6 @@ function sendNewCarToServer(newCar){
     .then(car => renderCarCard(car))
     }
     
-// use patch method to send or delete new car to the server
-function sendUpdateToServer(car){
-    fetch(`http://localhost:3000/cars/${car.id}`,{
-        method: 'PATCH',
-        headers: {
-            'Content-Type': 'application/json',
-            Accept: 'application.json'
-        },
-        body:JSON.stringify(car)
-    })
-} 
-
-
 
 // form listener
 let form = document.querySelector('form')
