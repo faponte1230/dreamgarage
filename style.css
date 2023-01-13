@@ -13,13 +13,14 @@ body {
 .card {
     background: yellow;
     margin: 4px;
-    border: 4px 
-    color: gold
+    border: 4px;
+    color: black
     
 }
 
 .car-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     text-emphasis-color: gray;
     text-shadow: blue;

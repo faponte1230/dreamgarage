@@ -15,4 +15,4 @@ This app utilizes a localized db JSON API to which will draw data from/to upon i
 Three event listeners are added: "DOMContentLoaded, "Submit", and "Click".
 
 # About
-In the garage are a few cars that should be in everyones garage. Submit the name of the car you want to add to your already impressive collection, and don't forget to include an img URL. "Towing away" your car will send it away to the shop until you reload your garage .. Wish away!
+In the garage are a few cars that should be in everyones garage. Submit the name of the car you want to add to your already impressive collection, and don't forget to include an img URL. "Towing away" your car remove your car from the garage .. Wish away!
