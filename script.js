@@ -1,16 +1,16 @@
+let carContainer = document.querySelector('.car-container')
+
 document.addEventListener('DOMContentLoaded', fetchCars)
 
     //fetches car obj from API
 function fetchCars(){
     fetch('http://localhost:3000/cars')
     .then(resp => resp.json())   
-    .then(carsData => renderCarCard(carsData))    
+    .then(carsData => carsData.forEach(carObj => renderCarCard(carObj)))    
 }
 
-    function renderCarCard(carsData){
-    carsData.forEach(car => {
-        let carContainer = document.querySelector('.car-container')    
-        
+    function renderCarCard(car){
+
         let card = document.createElement('div')
         card.className = 'card'
     
@@ -21,6 +21,22 @@ function fetchCars(){
         img.src = car.imgUrl
         img.className = 'car-img'
         
+        let voteCounter = document.createElement('div')
+        let counter = 0 
+
+        voteCounter.textContent = counter
+
+
+        let votebtn = document.createElement('button')
+        votebtn.textContent = 'vote'
+        votebtn.className = 'votecounter'
+        votebtn.addEventListener('click', () => {
+         counter += 1
+         voteCounter.textContent = counter
+         
+        })
+
+
         let btn = document.createElement('button')
         btn.textContent = 'TOW AWAY'
         btn.className = 'delete'
@@ -30,11 +46,14 @@ function fetchCars(){
         })
             card.remove()})
         
-        card.append(vehicle,img,btn)
+
+        card.append(vehicle,img,voteCounter,votebtn,btn)
         carContainer.appendChild(card)
         
-    })
     }
+    
+
+
 
     // use post method to send new cars submitted to the server
 function sendNewCarToServer(newCar){
@@ -53,11 +72,16 @@ function sendNewCarToServer(newCar){
 
 // form listener
 let form = document.querySelector('form')
+
+const newArray = []
+
+
 form.addEventListener('submit', createNewCar)
 
 
 // updates server with new obj
 function createNewCar(e){
+e.preventDefault()
 let newCar = {
     'name': e.target.name.value ,
     'imgUrl': e.target.image.value
