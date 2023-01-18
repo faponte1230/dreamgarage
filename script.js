@@ -73,9 +73,6 @@ function sendNewCarToServer(newCar){
 // form listener
 let form = document.querySelector('form')
 
-const newArray = []
-
-
 form.addEventListener('submit', createNewCar)
 
 
