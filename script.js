@@ -22,18 +22,19 @@ function fetchCars(){
         img.className = 'car-img'
         
         let voteCounter = document.createElement('div')
-        let counter = 0 
-
-        voteCounter.textContent = counter
+        
+        voteCounter.id = car.id
+        voteCounter.textContent = ` Votes: ${car.votes}`
 
 
         let votebtn = document.createElement('button')
         votebtn.textContent = 'vote'
+        votebtn.id = car.id
         votebtn.className = 'votecounter'
         votebtn.addEventListener('click', () => {
-         counter += 1
-         voteCounter.textContent = counter
-         
+         car.votes += 1
+         voteCounter.textContent = ` Votes: ${car.votes}`
+         patchCar(car)
         })
 
 
@@ -52,7 +53,17 @@ function fetchCars(){
         
     }
     
-
+  //patch car votes
+  function patchCar(car) {
+    fetch(`http://localhost:3000/cars/${car.id}`,{
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json'
+        },
+        body: JSON.stringify(car)
+    })
+  }
 
 
     // use post method to send new cars submitted to the server
@@ -81,7 +92,8 @@ function createNewCar(e){
 e.preventDefault()
 let newCar = {
     'name': e.target.name.value ,
-    'imgUrl': e.target.image.value
+    'imgUrl': e.target.image.value,
+    'votes': 0
 }
 sendNewCarToServer(newCar)
 
